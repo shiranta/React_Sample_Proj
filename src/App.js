@@ -2,9 +2,10 @@ import "./styles.css";
 
 //vriables
 let subject = "JavaScript";
-function Header() {
+function Header(props) {
   return (
     <header>
+      <h2>This is {props.name}'s Kitchen.</h2>
       <p>This is a sub componemt of App componemt.</p>
     </header>
   );
@@ -12,9 +13,9 @@ function Header() {
 
 export default function App() {
   return (
-    <div className="App">
+    <div className="App" >
       <h1>Hello {subject.toUpperCase()}</h1>
-      <Header/>
+      <Header name="Anton"/>
     </div>
   );
 }
