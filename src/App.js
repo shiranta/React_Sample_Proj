@@ -4,6 +4,8 @@ import "./styles.css";
 let subject = "JavaScript";
 function Header({name,year}) {
   //props are used to get data dynamically.
+  //props are the parameters of the function.
+  //props are the object that contains all the data passed to the component.
   return (
     <header>
       
@@ -13,12 +15,24 @@ function Header({name,year}) {
     </header>
   );
 }
+const items=["Rice & curry","Kottu","Noodles","Pizza","Burger"];
+
+function Main({dishes}) {
+  return (
+    <main>
+      <ul>
+        {dishes.map((dish=><li>{dish}</li>))}
+      </ul>
+    </main>
+  );
+}
 
 export default function App() {
   return (
     <div className="App" >
       <h1>Hello {subject.toUpperCase()}</h1>
       <Header name="Anton" year={2025}/>
+      <Main dishes={items} />
     </div>
   );
 }
