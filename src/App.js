@@ -2,7 +2,7 @@ import "./styles.css";
 import chef from "./Images/chef.jpg";
 
 //vriables
-let subject = "JavaScript";
+let subject = "Kitchen";
 function Header({name,year}) {
   //props are used to get data dynamically.
   //props are the parameters of the function.
@@ -31,11 +31,16 @@ function Main({dishes}) {
 export default function App() {
   return (
     <main>
-      <img src={chef} height={200} alt="chef" ></img>
+      
       <div className="App" >
-      <h1>Hello {subject.toUpperCase()}</h1>
-      <Header name="Anton" year={2025}/>
+      <h1>Hello! Welocome to {subject.toUpperCase()}</h1>
+      <img src={chef} height={200} alt="chef" ></img>//add image
+      <div>
+        <h2>This is our Menu</h2>
+      </div>
+      
       <Main dishes={items} />
+      <Header name="Anton" year={2025}/>
     </div>
     </main>
     
