@@ -1,4 +1,5 @@
 import "./styles.css";
+import chef from "./Images/chef.jpg";
 
 //vriables
 let subject = "JavaScript";
@@ -29,10 +30,14 @@ function Main({dishes}) {
 
 export default function App() {
   return (
-    <div className="App" >
+    <main>
+      <img src={chef} height={200} alt="chef" ></img>
+      <div className="App" >
       <h1>Hello {subject.toUpperCase()}</h1>
       <Header name="Anton" year={2025}/>
       <Main dishes={items} />
     </div>
+    </main>
+    
   );
 }
