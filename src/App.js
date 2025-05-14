@@ -1,6 +1,6 @@
 import "./styles.css";
 import chef from "./Images/chef.jpg";
-
+import { useState } from "react";
 //vriables
 let subject = "Kitchen";
 function Header({name,year}) {
@@ -19,8 +19,13 @@ function Header({name,year}) {
 const items=["Rice & curry","Kottu","Noodles","Pizza","Burger"];
 
 function Main({dishes}) {
+   const [status,setstatus] =useState("Kitchen Open");
+      console.log(status);
+  //useState is a hook that allows us to use state in functional components.
+  //useState returns an array with two elements: the current state and a function to update it.
   return (
     <main>
+      <h2>Resturent {status}</h2>
       <ul>
         {dishes.map((dish=><li>{dish}</li>))}
       </ul>
@@ -29,20 +34,26 @@ function Main({dishes}) {
 }
 
 export default function App() {
+ 
   return (
+    <>
+    <div>
+        <h2>This is our Menu</h2>
+      </div>
     <main>
+      
       
       <div className="App" >
       <h1>Hello! Welocome to {subject.toUpperCase()}</h1>
+
       <img src={chef} height={200} alt="chef" ></img>//add image
-      <div>
-        <h2>This is our Menu</h2>
-      </div>
+      
       
       <Main dishes={items} />
       <Header name="Anton" year={2025}/>
     </div>
     </main>
-    
+    </>// By doing a fragmentation we can include divs and other elements
+    // without wrapping them in a single parent element.
   );
 }
